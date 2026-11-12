@@ -30,7 +30,7 @@
 4. دامنه را با HTTPS باز کنید.
 5. فایل `config.example.php` را در File Manager کپی و نام نسخه را `config.php` کنید؛ مقدار رمز نمونه را با یک رمز طولانی و تصادفی عوض کنید. فایل `config.php` در Git نادیده گرفته می‌شود و نباید در مخزن عمومی قرار بگیرد.
 
-فایل‌های تا ۱۰۰ مگابایت بدون رمز و فایل‌های بزرگ‌تر فقط با رمز `config.php` پذیرفته می‌شوند. برنامه برای فایل‌های بزرگ‌تر سقف داخلی ندارد؛ فایل `.user.ini` هم محدودیت‌های PHP را روی نامحدود تنظیم می‌کند. بعضی هاست‌ها این فایل یا مقدار نامحدود را نمی‌پذیرند، یا سقف جداگانه‌ای در وب‌سرور دارند. اگر آپلودهای بزرگ کار نکردند، مقادیر `upload_max_filesize` و `post_max_size` و محدودیت‌های وب‌سرور را از cPanel/پشتیبانی هاست بررسی کنید. اعمال `.user.ini` گاهی چند دقیقه طول می‌کشد.
+فایل‌های تا ۱۰۰ مگابایت بدون رمز و فایل‌های بزرگ‌تر فقط با رمز `config.php` پذیرفته می‌شوند. برنامه و فایل `.user.ini` برای فایل‌های بالای ۱۰۰ مگابایت محدودیت داخلی PHP تعیین نمی‌کنند. بعضی هاست‌ها فایل `.user.ini` را نادیده می‌گیرند یا سقف جداگانه‌ای در وب‌سرور دارند. اگر آپلودهای بزرگ کار نکردند، مقادیر `upload_max_filesize` و `post_max_size` و محدودیت‌های وب‌سرور را از cPanel/پشتیبانی هاست بررسی کنید. اعمال `.user.ini` گاهی چند دقیقه طول می‌کشد.
 
 در اولین اجرا، برنامه فایل فهرست انتقال‌ها را در `storage/items.json` می‌سازد. این پوشه با `.htaccess` از دسترسی مستقیم وب بسته شده است. اگر وب‌سرور شما `.htaccess` را پشتیبانی نمی‌کند، دسترسی HTTP به `storage` را از تنظیمات هاست مسدود کنید.
 
@@ -91,7 +91,7 @@ Move text and files between your phone and computer with a short, one-time code.
 4. Open the site over HTTPS.
 5. In File Manager, copy `config.example.php` to `config.php` and replace its sample value with a long, random password. `config.php` is ignored by Git and must stay out of the public repository.
 
-Files up to 100 MB do not need a password. Larger files require the password from `config.php`. The application has no built-in size limit above 100 MB, and `.user.ini` requests unlimited PHP upload and request sizes. Some hosts ignore `.user.ini` or unlimited values, and web servers may enforce their own caps. If large uploads fail, check `upload_max_filesize`, `post_max_size`, and web-server limits with cPanel or your hosting provider. `.user.ini` changes may take a few minutes to apply.
+Files up to 100 MB do not need a password. Larger files require the password from `config.php`. The application and included `.user.ini` do not set a PHP size limit for files above 100 MB. Some hosts ignore `.user.ini` or enforce separate web-server caps. If large uploads fail, check `upload_max_filesize`, `post_max_size`, and web-server limits with cPanel or your hosting provider. `.user.ini` changes may take a few minutes to apply.
 
 On first run, the app creates `storage/items.json`. The included `.htaccess` blocks direct web access to this directory. If your web server does not honor `.htaccess`, block HTTP access to `storage` through your hosting configuration.
 
