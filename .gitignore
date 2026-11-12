@@ -1,0 +1,8 @@
+/storage/items.json
+/storage/*.bin
+/config.php
+*.log
+/pastehub.zip
+.DS_Store
+Thumbs.db
+
