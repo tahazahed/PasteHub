@@ -15,6 +15,8 @@
 - رابط فارسی، راست‌چین و واکنش‌گرا برای موبایل و دسکتاپ
 - حذف دسترسی به محتوا پس از ۲۴ ساعت
 - بدون دیتابیس، Composer یا وابستگی JavaScript
+- بدون فونت، اسکریپت یا دارایی خارجی؛ پس از بارگذاری از اینترنت بین‌الملل مستقل است
+- فونت وزیرمتن به‌صورت محلی میزبانی می‌شود
 - مناسب برای میزبانی اشتراکی PHP و cPanel
 
 ## پیش‌نیازها
@@ -48,13 +50,21 @@
 
 PasteHub حساب کاربری ندارد؛ کد پنج‌رقمی تنها راه دریافت محتواست. رمز آپلود بزرگ فقط اجازه ارسال فایل را می‌دهد و جایگزین کد دریافت نیست. محتوا روی سرور ذخیره می‌شود و رمزگذاری سرتاسری ندارد؛ برای همین HTTPS را فعال کنید و از یک رمز تصادفی قوی در `config.php` استفاده کنید.
 
+## مجوز فونت
+
+فونت وزیرمتن از مخزن رسمی [rastikerdar/vazirmatn](https://github.com/rastikerdar/vazirmatn) دریافت شده و تحت مجوز SIL Open Font License 1.1 است. متن مجوز در `fonts/OFL.txt` قرار دارد.
+
 ## ساختار پروژه
 
 ```text
 .
 ├── index.php       # رابط کاربری و API
+├── style.css       # استایل محلی، بدون فونت خارجی
 ├── .user.ini       # سقف آپلود PHP برای cPanel
 ├── config.example.php # نمونه تنظیم رمز آپلود؛ config.php خصوصی می‌ماند
+├── fonts/
+│   ├── Vazirmatn-Variable.woff2
+│   └── OFL.txt
 ├── storage/
 │   ├── .htaccess   # مسدودسازی دسترسی مستقیم وب
 │   └── index.html
@@ -76,6 +86,8 @@ Move text and files between your phone and computer with a short, one-time code.
 - Responsive Persian, right-to-left interface for phones and desktops
 - Transfers expire after 24 hours
 - No database, Composer, or JavaScript dependencies
+- No external fonts, scripts, or assets; the site does not depend on international services after deployment
+- Self-hosted Vazirmatn typeface
 - Designed for shared PHP hosting and cPanel
 
 ## Requirements
@@ -109,17 +121,26 @@ Files up to 100 MB can be sent without a password; larger files require the pass
 
 PasteHub does not use accounts. The five-digit code grants access to a transfer, so share it only with the intended recipient. The large-upload password authorizes sending files and does not replace the retrieval code. Content is stored on the server and is not end-to-end encrypted. Use HTTPS and a strong random password in `config.php`.
 
+## Font license
+
+The Vazirmatn font is included from the official [rastikerdar/vazirmatn](https://github.com/rastikerdar/vazirmatn) project and is licensed under the SIL Open Font License 1.1. The license text is included in `fonts/OFL.txt`.
+
 ## Project structure
 
 ```text
 .
 ├── index.php       # User interface and API
+├── style.css       # Local styles, with no external fonts
 ├── .user.ini       # PHP upload limits for cPanel
 ├── config.example.php # Upload-password template; keep config.php private
+├── fonts/
+│   ├── Vazirmatn-Variable.woff2
+│   └── OFL.txt
 ├── storage/
 │   ├── .htaccess   # Blocks direct web access
 │   └── index.html
 └── README.md
 ```
+
 
 
