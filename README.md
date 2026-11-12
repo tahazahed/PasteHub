@@ -1,5 +1,7 @@
 <div dir="rtl">
 
+<a id="فارسی"></a>
+
 # پیست هاب (PasteHub)
 
 انتقال ساده و سریع متن و فایل بین گوشی و کامپیوتر، بدون نیاز به حساب کاربری. محتوا را ارسال کنید، کد پنج‌رقمی بگیرید و همان کد را در دستگاه مقصد وارد کنید.
@@ -119,4 +121,5 @@ PasteHub does not use accounts. The five-digit code grants access to a transfer,
 │   └── index.html
 └── README.md
 ```
+
 
